@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Variedades Jousgaby: catálogo, amigurumis, maquillaje, papelería y mucho más en Quito.">
+  <title>Variedades_JousGaby | Tu tienda confiable y bonita</title>
+  <style>
+    /* CAMBIA AQUÍ colores, letras y estilos de toda la página */
+    :root {
+  --naranja-crema: #fffaf5;
+  --naranja-muy-claro: #fff3e8;
+  --naranja-pastel: #fde8d6;
+  --naranja-durazno: #fbd3b0;
+  --naranja-suave: #f9b97f;
+  --naranja-claro: #f5a05a;
+  --naranja: #e8772e;
+  --naranja-intenso: #e86a1a;
+  --naranja-oscuro: #d1631c;
+  --naranja-quemado: #a8481a;
+  --cafe-naranja: #7a3412;
+  --cafe-profundo: #4a2210;
+}
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family:Arial, Helvetica, sans-serif; color:var(--texto); background:var(--naranja-durazno); }
+    a { color:inherit; text-decoration:none; }
+    .promo { padding:9px 16px; text-align:center; background:var(--naranja-intenso); color:#fff; font-size:13px; }
+    header { position:sticky; top:0; z-index:5; background:#fff; box-shadow:0 2px 12px #43233112; }
+    .nav { max-width:1120px; margin:auto; padding:14px 22px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { display:flex; align-items:center; gap:11px; font-weight:800; color:var(--naranja-intenso); font-size:20px; }
+    /* Para poner tu logo: reemplaza el círculo por <img src="URL-DE-TU-LOGO" alt="Logo" class="logo"> */
+    .logo-mark { width:43px; height:43px; display:grid; place-items:center; border-radius:50%; background:var(--naranja-durazno); color:var(--naranja-oscuro); font-size:23px; }
+    .navlinks { display:flex; gap:22px; align-items:center; font-size:14px; }
+    .navlinks a:hover { color:var(--naranja-oscuro); }
+    .btn { display:inline-block; border:0; border-radius:7px; padding:12px 18px; background:var(--naranja-oscuro); color:#fff; font-weight:700; cursor:pointer; transition:.2s; }
+    .btn:hover { background:var(--naranja-claro); transform:translateY(-1px); }
+    .btn.outline { background:#fff; color:var(--vino); border:1px solid #e9cbd2; }
+    .hero { max-width:1120px; min-height:390px; margin:24px auto; padding:54px; border-radius:18px; background:linear-gradient(105deg,#f5dfe3 0%,#f9e9e8 54%,#ead0d5 100%); display:flex; align-items:center; overflow:hidden; position:relative; }
+    .hero:after { content:'🎁'; position:absolute; right:9%; bottom:12%; font-size:150px; opacity:.72; transform:rotate(-10deg); }
+    .hero-content { max-width:540px; position:relative; z-index:1; }
+    .eyebrow { color:var(--rosa); font-weight:800; text-transform:uppercase; letter-spacing:2px; font-size:12px; }
+    h1 { font-family:Georgia,serif; color:var(--vino); font-size:clamp(36px,5vw,60px); line-height:1.02; margin:12px 0; }
+    .hero p { max-width:450px; line-height:1.65; color:#bd8169; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+    .benefits { max-width:1080px; margin:0 auto 42px; padding:17px; background:#fff; border-radius:12px; display:grid; grid-template-columns:repeat(3,1fr); gap:12px; text-align:center; box-shadow:0 5px 20px #4323310b; }
+    .benefit { font-size:14px; color:#5b454d; }
+    .benefit strong { display:block; color:var(--naranja-quemado); margin-bottom:4px; }
+    section { max-width:1120px; margin:58px auto; padding:0 22px; }
+    .section-title { text-align:center; margin-bottom:25px; }
+    .section-title h2 { color:var(--vino); font: bold 30px Georgia,serif; margin:0 0 8px; }
+    .section-title p { color:#77666b; margin:0; }
+    .categories { display:grid; grid-template-columns:repeat(5,1fr); gap:15px; }
+    .category { min-height:126px; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:9px; background:#fff; border-radius:14px; text-align:center; padding:17px 9px; box-shadow:0 5px 18px #4323310a; transition:.2s; }
+    .category:hover { transform:translateY(-4px); background:var(--rosa-claro); }
+    .category span { font-size:34px; }
+    .category strong { color:var(--naranja-intenso); font-size:14px; }
+    .products { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .product { background:#fff; border-radius:13px; overflow:hidden; box-shadow:0 5px 20px #4323310d; }
+    .product-img { height:190px; display:grid; place-items:center; background:linear-gradient(140deg,#f7e7e9,#f2d5dc); font-size:70px; }
+    /* Reemplaza el emoji de cada producto por una imagen: <img src="URL-DE-FOTO" alt="Nombre" class="product-photo"> */
+    .product-photo { width:100%; height:100%; object-fit:cover; }
+    .product-info { padding:16px; }
+    .product-info h3 { color:var(--naranja-intenso); margin:0 0 7px; font-size:17px; }
+    .product-info p { margin:0 0 14px; color:#786a6e; font-size:14px; line-height:1.45; }
+    .product-info .btn { width:100%; text-align:center; }
+    .about { display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:30px; background:#fff; border-radius:18px; padding:32px; }
+    .about-art { min-height:230px; border-radius:14px; display:grid; place-items:center; background:var(--rosa-claro); font-size:100px; }
+    .about h2 { color:var(--naranja-intenso); font: bold 30px Georgia,serif; margin:0 0 12px; }
+    .about p { line-height:1.7; color:#66565b; }
+    .contact { padding:36px 18px; border-radius:18px; text-align:center; background:var(--naranja-oscuro); color:#fff; }
+    .contact h2 { font: bold 30px Georgia,serif; margin:0 0 10px; }
+    .contact p { margin:0 auto 20px; max-width:550px; line-height:1.6; color:#f4e7eb; }
+    .contact .btn { background:#fff; color:var(--naranja-intenso); }
+    footer { margin-top:55px; padding:28px 22px; background:#ca5303; color:#f8e9ed; text-align:center; font-size:13px; }
+    footer a { text-decoration:underline; }
+    .float-wa { position:fixed; z-index:6; right:18px; bottom:18px; background:#25d366; color:#fff; border-radius:50px; padding:14px 18px; font-weight:700; box-shadow:0 5px 18px #0003; }
+    @media(max-width:760px) {
+      .nav { padding:12px 16px; flex-wrap:wrap; }
+      .navlinks { order:3; width:100%; justify-content:center; gap:17px; font-size:13px; }
+      .nav .btn { padding:10px 12px; font-size:13px; }
+      .hero { margin:14px; padding:34px 24px; min-height:360px; }
+      .hero:after { right:0; bottom:8%; font-size:100px; opacity:.36; }
+      .benefits { margin:0 14px 35px; grid-template-columns:1fr; text-align:left; padding:16px 20px; }
+      .categories { grid-template-columns:repeat(2,1fr); }
+      .products { grid-template-columns:1fr 1fr; gap:12px; }
+      .product-img { height:145px; }
+      .about { grid-template-columns:1fr; padding:20px; }
+      .about-art { min-height:170px; }
+      section { margin:42px auto; padding:0 14px; }
+    }
+    @media(max-width:420px) { .products { grid-template-columns:1fr; } .product-img { height:190px; } }
+  .product-img {
+  height: 220px;          /* altura fija de la zona de imagen */
+  overflow: hidden;       /*  recorta lo que sobre */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* llena el espacio sin deformarse */
+    object-fit: contain;
+}
+.img-contacto, .about img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+}
+  </style>
+</head>
+<body>
+  <!-- EDITA el texto de oferta si quieres anunciar una promo -->
+  <div class="promo">✨ Detallitos especiales para cada ocasión · Hechos con Amor ✨</div>
+  <header>
+    <nav class="nav">
+      <a class="brand" href="#inicio"><span class="logo-mark">🎁</span><span>Variedades_JousGaby</span></a>
+      <div class="navlinks"><a href="#inicio">Inicio</a><a href="#categorias">Categorías</a><a href="#productos">Productos</a><a href="#nosotros">Nosotros</a></div>
+      <a class="btn" href="#productos">Ver catálogo</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <span class="eyebrow">Un mundo de detalles</span>
+        <h1>Encuentra eso que te encanta</h1>
+        <p>Amigurumis, maquillaje, papelería, productos por catálogo y muchas cositas más. ¡Escríbeme y te ayudo a encontrar el detalle perfecto!</p>
+        <div class="hero-actions"><a class="btn" href="#productos">Explorar productos</a><a class="btn outline wa-link" href="#">Pedir por WhatsApp</a></div>
+      </div>
+    </section>
+
+    <div class="benefits">
+      <div class="benefit"><strong>💝 Hecho con cariño</strong>Detalles para ti y los tuyos</div>
+      <div class="benefit"><strong>🛍️ Variedad para elegir</strong>Un catálogo lleno de sorpresas</div>
+      <div class="benefit"><strong>💬 Atención directa</strong>Consulta disponibilidad por WhatsApp</div>
+    </div>
+
+    <section id="categorias">
+      <div class="section-title"><h2>Compra por categoría</h2><p>Hay algo especial para cada gusto</p></div>
+      <div class="categories">
+        <a class="category" href="#productos"><span>🧸</span><strong>Amigurumis</strong></a>
+        <a class="category" href="#productos"><span>💄</span><strong>Maquillaje</strong></a>
+        <a class="category" href="#productos"><span>📚</span><strong>Papelería</strong></a>
+        <a class="category" href="#productos"><span>🌸</span><strong>Por catálogo</strong></a>
+        <a class="category" href="#productos"><span>🎀</span><strong>Variedades</strong></a>
+      </div>
+    </section>
+
+    <section id="productos">
+      <div class="section-title"><h2>Algunos favoritos</h2><p>Pregúntame por modelos, colores y disponibilidad</p></div>
+      <div class="products">
+        <!-- DUPLICA una tarjeta para agregar más productos. Cambia nombre, descripción y emoji/foto. -->
+        <article class="product"><div class="product-img"><img src="C:\Users\Gaby\OneDrive\Desktop\FOTOS PÁGINA\TEJIDOS.jpeg" alt="tejidos"></div><div class="product-info"><h3>Amigurumis tejidos</h3><p>Muñequitos y detalles tejidos con mucho cariño.</p><a class="btn product-wa" data-product="Amigurumis tejidos" href="#">Consultar por WhatsApp</a></div></article>
+        <article class="product"><div class="product-img"><img src="C:\Users\Gaby\OneDrive\Desktop\FOTOS PÁGINA\MAQUILLAJE.jpeg" alt="maquillaje"></div><div class="product-info"><h3>Maquillaje</h3><p>Opciones lindas para consentirte o regalar.</p><a class="btn product-wa" data-product="Maquillaje" href="#">Consultar por WhatsApp</a></div></article>
+        <article class="product"><div class="product-img"><img src="C:\Users\Gaby\OneDrive\Desktop\FOTOS PÁGINA\PAPELERIA.jpeg" alt="Papelería"></div><div class="product-info"><h3>Papelería bonita</h3><p>Artículos útiles y coloridos para tus días.</p><a class="btn product-wa" data-product="Papelería" href="#">Consultar por WhatsApp</a></div></article>
+        <article class="product"><div class="product-img"><img src="C:\Users\Gaby\OneDrive\Desktop\FOTOS PÁGINA\LOGO.jpeg" alt="catálogo"></div><div class="product-info"><h3>Productos por catálogo</h3><p>Consulta el catálogo y los productos disponibles.</p><a class="btn product-wa" data-product="Productos por catálogo" href="#">Consultar por WhatsApp</a></div></article>
+        <article class="product"><div class="product-img"><img src="C:\Users\Gaby\OneDrive\Desktop\FOTOS PÁGINA\DETALLES.jpeg" alt="detalles"></div><div class="product-info"><h3>Detalles para regalar</h3><p>Un detalle especial para sorprender a alguien.</p><a class="btn product-wa" data-product="Detalles para regalar" href="#">Consultar por WhatsApp</a></div></article>
+        <article class="product"><div class="product-img"><img src="C:\Users\Gaby\OneDrive\Desktop\FOTOS PÁGINA\VARIEDADES.jpeg" alt="variedades"></div><div class="product-info"><h3>Muchas variedades</h3><p>Escríbeme y te cuento qué más tenemos para ti.</p><a class="btn product-wa" data-product="Variedades" href="#">Consultar por WhatsApp</a></div></article>
+      </div>
+    </section>
+
+    <section id="nosotros">
+      <div class="about">
+        <div class="about-art"><img src="C:\Users\Gaby\OneDrive\Desktop\FOTOS PÁGINA\LOGOs.jpeg" alt="LOGO"></div>
+        <div><h2>¡Hola, somos JousGaby!</h2><p>En Variedades_JousGaby encuentras productos para regalar, crear, estudiar y consentirte. Estamos en Quito, Ecuador, y será un gusto atenderte personalmente.</p><a class="btn wa-link" href="#">Hablemos por WhatsApp</a></div>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <h2>¿Buscas algo en especial?</h2>
+      <p>Cuéntame qué necesitas y te ayudo a revisar opciones, precios y disponibilidad. ¡Conversemos!</p>
+      <a class="btn wa-link" href="#">Escríbeme al WhatsApp</a>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Variedades_JousGaby</strong><br>Quito, Ecuador · Sorprende a tu persona favorita<br><br>
+    © <span id="year"></span> Variedades_JousGaby · Hecho con cariño
+  </footer>
+  <a class="float-wa wa-link" href="#" aria-label="Abrir WhatsApp">☏ WhatsApp</a>
+
+  <script>
+    /* CAMBIA este número si algún día usas otro WhatsApp.
+       Formato internacional sin +, espacios ni guiones: Ecuador = 593 + número. */
+    const WHATSAPP = '593962882225';
+    const mensajeGeneral = 'Hola, vi la página de Variedades Jousgaby y quisiera información sobre sus productos.';
+    const waUrl = (mensaje) => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensaje)}`;
+    document.querySelectorAll('.wa-link').forEach(link => link.href = waUrl(mensajeGeneral));
+    document.querySelectorAll('.product-wa').forEach(link => {
+      link.href = waUrl(`Hola, vi la página de Variedades_JousGaby y me interesa: ${link.dataset.product}. ¿Me das más información?`);
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
